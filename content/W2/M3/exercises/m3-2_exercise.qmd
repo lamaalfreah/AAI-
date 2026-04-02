@@ -115,29 +115,3 @@ df.head()
 ```
 
 ---
-
-## F. Critique and Improvement
-
-**1.** Identify issues in the given visualization and suggest improvements. 
-
-Run the following code. It produces a plot that is heavily flawed and lacking proper context. 
-
-```python
-# Poorly constructed plot
-plt.figure()
-plt.hist(df[df['species'] == 'Adelie']['body_mass_g'])
-plt.hist(df[df['species'] == 'Gentoo']['body_mass_g'])
-plt.hist(df[df['species'] == 'Chinstrap']['body_mass_g'])
-plt.show()
-```
-
-**Identify at least two issues** with the plot above:
-
-- *(Issue 1)*
-- *(Issue 2)*
-
-**Rewrite the code** to fix these issues and create a clear, communicative visualization. (Hint: consider transparency, legends, axis labels, or just using a seaborn function to handle grouping smoothly).
-
-```python
-# YOUR IMPROVED CODE
-```
