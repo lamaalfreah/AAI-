@@ -7,9 +7,9 @@ Owing to its flexible architecture, most Transformer models are a variant of an 
 
 Before diving into specific architectural variants, it's helpful to understand that most tasks follow a similar pattern: input data is processed through a model, and the output is interpreted for a specific task. The differences lie in:
 
-1. how the data is prepared
-2. what model architecture variant is used
-3. how the output is processed
+1. **Pre-processing**: how the input data is prepared
+2. **Processing**: based on model architecture variant used
+3. **Post-processing**: how the output is processed
 
 ## Transformer models for language 
 
@@ -87,3 +87,4 @@ Whisper is an encoder-decoder (sequence-to-sequence) transformer pretrained on 6
 2. A *learnable embedding* - a special `[CLS]` token - is added to the beginning.
 3. *Position embeddings* are added because the model doesn't know how the image patches are ordered. All of the embeddings are passed to the Transformer encoder.
 4. The output, specifically only the output with the `[CLS]` token, is passed to a multilayer perceptron head (MLP) for classification.
+
