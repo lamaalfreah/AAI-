@@ -11,232 +11,273 @@ NLP bridges the gap between computers and human language. It combines elements o
 2. linguistics, 
 3. artificial intelligence
  
-.. to enable machines to Understand (U) and Generate (G) language:
+.. to enable machines to process and respond to natural language:
 
-## Natural Language Understanding
+1. Written
+2. Spoken
 
-**NLU**: Extract meaning, intention, emotion, importance, and correlation between words/texts/speech. Examples:
+Recent success in NLP has been driven by Deep Learning approach which is based on [massive datasets](https://github.com/niderhoff/nlp-datasets) and models that can learn from data.
 
-- **Singular** Prediction: identify the underlying sentiment (positive/negative) or goal (e.g., "wants refund" or "needs to speak to human") expressed in a sentence or conversation.
-- **Sequence** Prediction: identify named entities in text, such as people, organizations, locations, dates, etc.
-- **Information Retrieval**: search engines.
+## Optical Character Recognition (OCR)
 
-## Natural Language Generation
+Optical Character Recognition (OCR) converts images of text into searchable, editable data. Here is where it is used most effectively:
 
-**NLG**: language models able generate the most likely next word based on previous words, current conetxt, previous conversations, distributional semantics, and human-reinforced patterns of text.
+1. **Traffic:** Reading license plates for automated toll collection and parking garage access.
+2. **Digitization:**
+  - Converting physical books, legal files, and historical archives into searchable digital databases.
+  - Instantly extracting text from invoices, receipts, and tax forms to eliminate manual typing.
+3. **Live Translation:** Enabling apps to translate foreign street signs or menus by simply pointing a smartphone camera at them.
 
-**Prediction** here, is the next word. But done repeatedly. Examples:
 
-- Question Answering based on FAQ
-- Paraphrasing and Translation and Summarization
-- Multi-turn Chatbots: mimics human conversations
-- Coding agents: mimics developer thoughts and actions (explicitly written be devs)
+## Automatic Speech Recognition (ASR)
 
-## Common NLP Tasks
+Convert spoken language into text or actionable commands.
 
-### Sentiment Analysis
+- **Transcription:**
+  - **phone calls** for customer service and sales
+  - **meetings** for note-taking and documentation
+  - **lectures** for students and researchers
+  - **podcasts** for SEO and accessibility
+  - **interviews** for journalists and researchers
+- **Dictation:** for people to speak their notes directly into text documents.
+- **Voice Assistants:** Powering smart devices (like Siri or Google Assistant) to answer questions, set reminders, and control smart homes.
 
-The process of classifying the emotional intent of text. Generally, the input to a sentiment classification model is a piece of text, and the output is the probability that the sentiment expressed is positive, negative, or neutral.
 
-- **Toxicity classification** models can be used to moderate and improve online conversations by:
-    - silencing offensive comments (تعليقات مسيئة)
-    - detecting hate speech (خطاب كراهية)
-    - scanning documents for defamation (التشهير)
-- **Customer reviews classification** on various online platforms
-- **Identifying signs of mental illness** in online comments
-- **Spam detection** in emails and messages
+## Text to Speech (TTS)
 
-### Intent Classification
+Convert text into speech.
 
-- `"Hello, I want to get me a Laptop how much does it cost?"`
-    - Intent: `"BUY Laptop"`
-- `"I am very frustrated with your service, and I wanna cancel right now!"`
-    - Intent: `"CANCEL Subscription"`
-- `"Here I bought this Keyboard, but it is not working. I want to get my money back!"`
-    - Intent: `"REFUND Transaction"`
+Example: [NAMAA Saudi Dialect TTS](https://huggingface.co/spaces/omarelshehy/NAMAA-Saudi-Voice).
 
-### Named-entity Recognition (NER)
+## Machine Translation (MT)
+
+Automatically converting text from one language into another. This is a challenging task because languages have different grammatical structures, vocabularies, and idioms.
+
+- Translating **subtitles** for movies and TV shows
+- Translating **websites** into multiple languages
+- Translating **legal documents** for international business
+- Translating **medical records** for healthcare providers
+- Translating **scientific papers** for researchers
+- Translating **user manuals** for consumer
+- Translating **social media posts** for marketing
+
+
+## Information Retrieval
+
+**Information Retrieval (IR)** is the process of finding relevant information from a collection of documents.
+
+- **Search engines** crawl, index, and find documents based on user queries.
+- **Chat models** uses Retriveal to Augment their Generation (RAG) to provide up-to-date and factual answers.
+
+
+## Named-entity Recognition (NER)
 
 **Named entity recognition (NER)** aims to extract entities in a piece of text into predefined categories such as: **personal names**, **organizations**, **locations**, and **quantities**.
 
 <img src="https://mohammedkhalilia.com/project/wojood/featured_hu3c39113436d8415af0ad7d87aac657cd_252396_720x2500_fit_q75_h2_lanczos.webp">
 
-### Information Extraction and Retrieval
 
-Search engines like Google, Bing, and Yahoo use NLP to understand user queries and return relevant results, after having crawled the web.
+## Summarization
 
-### Machine Translation
+Distill the most important information into a shorter text.
 
-Automatically converting text from one language into another. This is a challenging task because languages have different grammatical structures, vocabularies, and idioms.
+- **Extractive**: select the most important sentences or phrases from the original text and combine them to create a summary.
+- **Abstractive**: generate new sentences that capture the essence of the original text.
 
-- **Translating subtitles** for movies and TV shows
-- **Translating websites** into multiple languages
-- **Translating legal documents** for international business
-- **Translating medical records** for healthcare providers
-- **Translating scientific papers** for researchers
-- **Translating user manuals** for consumer
-- **Translating social media posts** for marketing
 
-### Text summarization
+## Text Classification
 
-The process of distilling the most important information from a piece of text into a shorter version. There are two main types of text summarization: **extractive** and **abstractive**.
+**Text Classification** is the process of assigning a category or label to a piece of text.
 
-- **Extractive summarization** involves **selecting** the most important sentences or phrases from the original text and combining them to create a summary.
-  - think: "Google search".
-- **Abstractive summarization** involves **generating** new sentences that capture the essence of the original text.
-  - think: "ChatGPT"
+**Spam Detection** (Spam / Not Spam) in emails and messages:
 
-### Question Answering (QA)
+> "Congratulations! You've won a $1000 Walmart gift card. Click here to claim your prize."
 
-Generally, question-answering tasks come in two flavors:
+Label: Spam.
 
-- **Multiple choice**: the learning task is to pick the correct answer.
-- **Open domain**: the model provides answers to questions in natural language without any options provided, often by querying a large number of texts.
+**Sentiment Analysis** identifies the emotional tone of text.
 
-## Cross-modality Tasks
+* **Positive:** "This coffee is amazing!"
+* **Negative:** "My order arrived cold and late."
+* **Neutral:** "The store opens at 8 AM."
+
+### Content Moderation
+
+- **Fake reviews** (تقييمات مزيفة)
+- **Fake news** (أخبار مزيفة)
+- **Fake accounts** (حسابات مزيفة)
+- **Inappropriate content** (محتوى غير لائق)
+
+## Semantic Textual Similarity (STS)
+
+**Semantic Textual Similarity (STS)** measures how closely two sentences match in meaning, regardless of the exact words used.
+[Semantic Textual Similarity (STS)](https://sbert.net/examples/sentence_transformer/training/sts/README.html) assigns a score between 0 and 1 on the similarity of two texts. Here are exampels from the [STSB Dataset](https://huggingface.co/datasets/sentence-transformers/stsb):
+
+| Sentence A | Sentence B | Score |
+| --- | --- | --- |
+| A plane is taking off. | An air plane is taking off. | 1 |
+| A man is playing a large flute. | A man is playing a flute. | 0.76 |
+| A man is spreading shreded cheese on a pizza. | A man is spreading shredded cheese on an uncooked pizza. | 0.76 |
+| Three men are playing chess. | Two men are playing chess. | 0.52 |
+| A man is playing the cello. | A man seated is playing the cello. | 0.85 |
+| Some men are fighting. | Two men are fighting. | 0.85 |
+| A man is smoking. | A man is skating. | 0.1 |
+| The man is playing the piano. | The man is playing the guitar. | 0.32 |
+| A man is playing on a guitar and singing. | A woman is playing an acoustic guitar and singing. | 0.44 |
+| A person is throwing a cat on to the ceiling. | A person throws a cat on the ceiling. | 1 |
+| The man hit the other man with a stick. | The man spanked the other man with a stick. | 0.84 |
+
+
+## Natural Language Inference (NLI)
+
+Given two sentence (premise and hypothesis), Natural Language Inference (NLI) is the task of deciding if the premise entails the hypothesis, if they are contradiction or if they are neutral.
+
+- **Entailment**: Hypothesis is definitely true given the premise.
+- **Contradiction**: Hypothesis is definitely false given the premise.
+- **Neutral**: Hypothesis may or may not be true given the premise.
+
+
+### NLI: General Knowledge
+
+Commonly used NLI dataset are [SNLI](https://huggingface.co/datasets/stanfordnlp/snli) and [MultiNLI](https://huggingface.co/datasets/nyu-mll/multi_nli) for general knowledge:
+
+| Premise | Hypothesis | Label |
+| --- | --- | --- |
+| Children smiling and waving at camera | They are smiling at their parents | neutral |
+| Children smiling and waving at camera | There are children present | entailment |
+| Children smiling and waving at camera | The kids are frowning | contradiction |
+
+
+### MedNLI: Medical Knowledge
+
+[MedNLI](https://jgc128.github.io/mednli/) dataset for medical knowledge:
+
+| Premise | Hypothesis | Label |
+| --- | --- | --- |
+| Labs were notable for Cr 1.7 (baseline 0.5 per old records) and lactate 2.4. | Patient has elevated Cr | entailment |
+| Labs were notable for Cr 1.7 (baseline 0.5 per old records) and lactate 2.4. | Patient has normal Cr | contradiction |
+| Labs were notable for Cr 1.7 (baseline 0.5 per old records) and lactate 2.4. | Patient has elevated BUN | neutral |
+
+
+### Email Application
+
+[Email Intent Classification Dataset](https://huggingface.co/datasets/aadilsayad/email-intent-classification):
+
+| Premise | Hypothesis | Label |
+| --- | --- | --- |
+| Can I send an email, please? | send | send |
+| I'd like to compose an email. | send | send |
+| I need to send an email. | send | send |
+| Could you help me write an email? | send | send |
+| Is it possible to send an email with you? | send | send |
+| Show me all my emails. | list | list |
+| Can you list my emails, please? | list | list |
+| Open my inbox. | list | list |
+| I want to see all my mail. | list | list |
+| Display my email messages. | list | list |
+| Delete this email, please. | trash | trash |
+| Can you get rid of this email? | trash | trash |
+| I want to remove this email. | trash | trash |
+| Please erase this email. | trash | trash |
+| Time to delete this one. | trash | trash |
+
+
+### Sales Application
+
+| Premise | Hypothesis | Label |
+| --- | --- | --- |
+| "Hello, I want to get me a Laptop how much does it cost?" | "BUY Laptop" | "BUY Laptop" |
+| "I am very frustrated with your service, and I wanna cancel right now!" | "CANCEL Subscription" | "CANCEL Subscription" |
+| "Here I bought this Keyboard, but it is not working. I want to get my money back!" | "REFUND Transaction" | "REFUND Transaction" |
+
+
+## NLU & NLG
+
+**Natural Language Understanding (NLU)**: Extract meaning, intention, emotion, importance, and correlation between words/texts/speech.
+
+**Natural Language Generation (NLG)**: language models able generate the most likely next word based on previous words, current conetxt, previous conversations, distributional semantics, and human-reinforced patterns of text.
+
+**Prediction** here, is the next word. But done auto-regressively (repeatedly feeding the output as input for the next prediction). Examples:
+
+- Question Answering based on FAQ
+- Paraphrasing and Translation and Summarization
+- Multi-turn Chatbots: mimics human conversations
+- Coding agents: mimics developer thoughts and actions (devs explicitly write down what their step-by-step thinking, commands, and actions)
+
+
+## Large Language Models
+
+**Large Language Models (LLMs)** are a powerful subset of deep neural NLP models characterized by:
+
+1. massive size (billions of parameters)
+2. extensive training data (trillions of tokens)
+3. ability to perform a wide range of language tasks
+
+
+## Vision-Language Models
+
+**Vision-Language Models (VLMs)** are language models that can process and understand images in addition to text.
+
+Example: [QARI-OCR](https://huggingface.co/NAMAA-Space/Qari-OCR-v0.3-VL-2B-Instruct) Structural Arabic Document Understanding.
+
+
+## Model Hub
+
+The [Model Hub](https://huggingface.co/models) is where the members of the Hugging Face community can host all of their model checkpoints for simple storage, discovery, and sharing.
+
+Cross-modality Tasks:
 
 - **Speech**:
   - speech-to-text: transcribe audio
   - text-to-speech: generate voice from text
   - text+speech-to-speech: modiffy a given voice
 - **Image**:
-  - image-to-text: describe an image
+  - image-to-text: describe an image or read text in an image
   - text-to-image: draw an image
   - text+image-to-image: modify an image
 
-## Speech Recognition
 
-- **Voice assistants** like Siri, Alexa, and Google Assistant
-- **Transcription services** like Otter.ai and Rev
-- **Voice-controlled devices** like smart speakers and smart TVs
-- **Voice search** in search engines like Google and Bing
-- **Voice typing** in word processors like Google Docs and Microsoft Word
-- **Voice commands** in video games and virtual reality applications
-- **Voice biometrics** for security and authentication
-- **Closed captioning** for the hearing impaired
-- **Language translation** in real-time
-- **Transcription of phone calls** for customer service and sales
-- **Transcription of meetings** for note-taking and documentation
-- **Transcription of lectures** for students and researchers
-- **Transcription of podcasts** for SEO and accessibility
-- **Transcription of interviews** for journalists and researchers
+## Models Timeline
 
-## Large Language Models
+The [Models Timeline](https://huggingface.co/spaces/yonigozlan/Transformers-Timeline) is an interactive chart of how architectures in Transformers have changed over time. You can scroll through models in order, spanning text, vision, audio, video, and multimodal use cases.
 
-While this course was originally focused on NLP (Natural Language Processing), it has evolved to emphasize Large Language Models (LLMs), which represent the latest advancement in the field. 
+Use the filters to narrow models by modality or task. Set custom date ranges to focus on models added during specific periods. Click a model card to see its capabilities, supported tasks, and documentation.
 
-**What's the difference?**
+![](../assets/timeline.png)
 
-- **NLP (Natural Language Processing)** is the broader field focused on enabling computers to understand, interpret, and generate human language. NLP encompasses many techniques and tasks such as sentiment analysis, named entity recognition, and machine translation.
-- **LLMs (Large Language Models)** are a powerful subset of NLP models characterized by their massive size, extensive training data, and ability to perform a wide range of language tasks with minimal task-specific training. Models like the Llama, GPT, or Claude series are examples of LLMs that have revolutionized what's possible in NLP.
 
-## Why is language processing challenging?
+## Transfer Learning
 
-Computers don't process information in the same way as humans. For example, when we read the sentence "I am hungry," we can easily understand its meaning. Similarly, given two sentences such as "I am hungry" and "I am sad," we're able to easily determine how similar they are. For machine learning (ML) models, such tasks are more difficult. The text needs to be processed in a way that enables the model to learn from it. And because language is complex, we need to think carefully about how this processing must be done. There has been a lot of research done on how to represent text, and we will look at some methods in the next chapter.
+**Pretraining** is the act of training a model from scratch: the weights are randomly initialized, and the training starts without any prior knowledge.
 
-Even with the advances in LLMs, many fundamental challenges remain. These include understanding ambiguity, cultural context, sarcasm, and humor. LLMs address these challenges through massive training on diverse datasets, but still often fall short of human-level understanding in many complex scenarios.
+This pretraining is usually done on very large amounts of data. Therefore, it requires a very large corpus of data, and training can take up to several weeks.
 
-### Ambiguity (الغموض)
+**Fine-tuning**, on the other hand, is the training done **after** a model has been pretrained. To perform fine-tuning, you first acquire a pretrained language model, then perform additional training with a dataset specific to your task. 
 
-#### Lexical ambiguity
+Wait -- why not simply train the model for your final use case from the start (**scratch**)? There are a couple of reasons:
 
-**Lexical ambiguity** is a subtype of semantic ambiguity where a word or morpheme is ambiguous.
-- "The fisherman went to the bank"
-  - "bank" could either mean "river bank" or the "bank building"
-- "شربت من العين" (نبع الماء).
-- "أبصرت بـ العين" (عضو البصر).
-- "أرسل القائد عيناً لاستطلاع العدو" (جاسوساً).
-- "اشتريت هذا بعينه" (بذاته/نفسه).
+*  The pretrained model was already trained on a dataset that has some similarities with the fine-tuning dataset. The fine-tuning process is thus able to take advantage of knowledge acquired by the initial model during pretraining. 
+*  Since the pretrained model was already trained on lots of data, the fine-tuning requires way less data to get decent results.
+*  For the same reason, the amount of time and resources needed to get good results are much lower.
 
-#### Homonymy
+Fine-tuning a model therefore has lower time, data, financial, and environmental costs. It is also quicker and easier to iterate over different fine-tuning schemes.
 
-**Homonymy** (التجانس اللفظي) happens when words are pronounced the same way.
-- "this is a row of raw materials"
-- "I see the sea"
-- "Without my glasses I can't see the glass"
-- مثال (كلمة "ذهَب"):
-  - "خاتم من ذَهَب" (المعدن النفيس).
-  - "ذَهَبَ محمد إلى المدرسة" (فعل ماضٍ بمعنى مشى/غادر).
+## Architectures vs. checkpoints
 
-#### Semantic ambiguity
+As we dive into Transformer models in this course, you'll see mentions of *architectures* and *checkpoints* as well as *models*. These terms all have slightly different meanings: 
 
-**Semantic ambiguity** (الغموض الدلالي) results from expressions having multiple meanings.
-- "It’s on the house." -- could mean something is free, or an object could literally be found on the house.
-- "that went over my head" -- could express confusion or that something literally passed over their head
-- "not your business"
-- مثال: "طارت الطيور بأرزاقها"
-  - المعنى الحرفي: الطيور أخذت الطعام وطارت.
-  - المعنى المقصود: فات الأوان وانتهت الفرصة.
+* **Architecture**: This is the skeleton of the model -- the definition of each layer and each operation that happens within the model. 
+* **Checkpoints**: These are the weights that will be loaded in a given architecture.
+* **Model**: This is an umbrella term that isn't as precise as "architecture" or "checkpoint": it can mean both. This course will specify *architecture* or *checkpoint* when it matters to reduce ambiguity.
 
-#### Syntactic Ambiguity
+For example, BERT is an architecture while `bert-base-cased`, a set of weights trained by the Google team for the first release of BERT, is a checkpoint. However, one can say "the BERT model" and "the `bert-base-cased` model."
 
-**Syntactic Ambiguity** happens when the sentence has multiple parse trees.
+## Framework Guide
 
-- "I saw the man on the beach with my binoculars." -- could mean that I saw a man through my binoculars or the man had my binoculars with him.
+Use `transformers` (HuggingFace): as the foundational, standard library for loading, training, and running models. You can boost fine-tuning speed and efficiency by using [`unsloth`](https://github.com/unslothai/unsloth). Both HuggingFace and Unsloth support deployment and inference.
 
-Reference: https://cs.nyu.edu/~davise/ai/ambiguity.html
+Use [`sentence_transformers`](https://www.sbert.net/) specifically for state-of-the-art **embedding** and **reranker** models; used for semantic search, clustering, and classification.
 
-#### Irony and sarcasm
+Use [LabelStudio](https://labelstud.io/guide) (or [Argilla](https://huggingface.co/learn/llm-course/chapter10/1)) to curate data for training and fine-tuning.
 
-Any time you say the opposite of the truth intentionally for effect, that’s verbal irony.
-
-Sarcasm:
-
-- "I love it when my computer crashes."
-- "Oh, fantastic! I just love waiting in line for hours."
-- عندما يرتكب شخص خطأ فادحاً فتقول له: "ما شاء الله، عبقري!"
-
-Irony:
-
-- Verbal: "جيتك يا عبد المعين تعين لقيتك يا عبد المعين تنعان"
-- Situational:
-  - A Doctor that smokes cigarettes.
-  - "باب النجار مخلّع"
-
-Irony and sarcasm present problems for machine learning models because they generally use words and phrases that, strictly by definition, may be positive or negative, but actually connote the opposite.
-
-#### Dialects
-
-Dialects are variations of a language spoken in different regions or by different social groups. For example, American English and British English have different spellings, pronunciations, and vocabulary.
-
-- Water and "Wadder"
-- "Ain't no thang" vs. "It's no problem": This phrase is common in some dialects of American English, but it might be unfamiliar to others.
-- "Y'all" vs. "you guys": This is a regional difference in addressing a group of people, with "y'all" being more common in the Southern United States.
-
-اختلاف المفردات (مثال: "كيف حالك؟"):
-- الفصحى: كيف حالك؟
-- الخليجية: شلونك؟ / شعلومك؟
-- المصرية: إزيك؟ / عامل إيه؟
-- الشامية: كيفك؟
-- المغربية: كيداير؟ / لباس؟
-
-أدوات النفي (مثال: "ما أكلت"):
-- المصرية/الشامية: ما اكلتش / ما اكلت.
-- الخليجية: ما كليت / مو ماكل.
-- المغربية: ما كليتش.
-
-#### Slang and jargon
-
-Slang and jargon are informal words and phrases used in specific contexts or by particular groups of people. They can be difficult for machines to understand because they are constantly evolving and can have multiple meanings. Examples:
-- "That movie was lit!" (meaning: the movie was excellent)
-- "I'm feeling blue." (meaning: I'm feeling sad)
-- "Google it!"
-
-- "كبّر دماغك": تعني تجاهل الأمر (وليست دعوة طبية لتكبير الرأس).
-- "سحَب عليه": (السعودية/الخليج) تعني تجاهله أو لم يذهب لموعده.
-- "قصف جبهته": تعني أحرجه برد قوي ومفحم.
-
-Jargon:
-- "ROI" (return on investment)
-- "KPI" (key performance indicator)
-- "ML" (machine learning)
-
-## Learning Objectives
-
-Throughout this course, you'll learn about both traditional NLP concepts and cutting-edge LLM techniques, as understanding the foundations of NLP is crucial for working effectively with LLMs.
-
-In this chapter, you will learn:
-
-* How to use the `pipeline()` function to solve NLP tasks such as text generation and classification
-* About the Transformer architecture
-* How to distinguish between encoder, decoder, and encoder-decoder architectures and use cases
+Use `langchain`: to develop applications **powered by** language models.
