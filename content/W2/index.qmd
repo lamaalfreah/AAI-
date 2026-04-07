@@ -113,7 +113,7 @@ Lessons:
 
 #### Exercises
 
-1. [Exercise](./M3/exercises/m3-1_exercise.qmd)
+1. [Exercise](./M3/exercises/m3-1_exercise.ipynb)
 
 ### M3-2: Statistical Visualization
 
@@ -144,7 +144,7 @@ Lessons and labs:
 
 #### Exercises
 
-1. [Exercise](./M3/exercises/m3-2_exercise.qmd)
+1. [Exercise](./M3/exercises/m3-2_exercise.ipynb)
 2. [Visualization Exercises](./M3/exercises/viz_exercises.ipynb)
 
 ## Module 4: Inferential Statistics
